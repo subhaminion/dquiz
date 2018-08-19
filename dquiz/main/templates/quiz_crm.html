@@ -15,15 +15,15 @@
 	      <tr>
 	        <th>Quiz Name</th>
 	        <th>Status</th>
-	        <th>Edit</th>
+	        <th colspan="2">Action</th>
 	      </tr>
 	    </thead>
 	    <tbody>
 	    	{% for quiz in object_list %}
 			  <tr>
-			    <td>{{ quiz.description }}</td>
+			    <td>{{ quiz.quiz_description }}</td>
 			    <td> {{ quiz.isPublished }} </td>
-			    <td>john@example.com</td>
+			    <td><a href="{% url "quiz_update" quiz.id %}">Edit</a> | <a href="{% url "question_create" %}">Add Question</a></td>
 			  </tr>
 			{% endfor %}
 	    </tbody>

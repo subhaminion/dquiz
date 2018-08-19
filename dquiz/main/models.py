@@ -2,14 +2,14 @@ from django.db import models
 
 
 class Quiz(models.Model):
-    description = models.CharField(max_length=100)
+    quiz_description = models.CharField(max_length=100)
     isPublished = models.BooleanField()
 
     def __str__(self):
-        return f"{self.description}"
+        return f"{self.quiz_description}"
 
 
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, related_name="quizes")
-    description = models.CharField(max_length=100)
+    question_description = models.CharField(max_length=100)
     answer = models.CharField(blank=True, max_length=100)
