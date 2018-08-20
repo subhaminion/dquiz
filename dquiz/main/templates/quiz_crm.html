@@ -15,6 +15,7 @@
 	      <tr>
 	        <th>Quiz Name</th>
 	        <th>Status</th>
+	        <th>Can Be Published</th>
 	        <th colspan="2">Action</th>
 	      </tr>
 	    </thead>
@@ -23,6 +24,7 @@
 			  <tr>
 			    <td>{{ quiz.quiz_description }}</td>
 			    <td> {{ quiz.isPublished }} </td>
+			    <td>{{ quiz.canPublish }}</td>
 			    <td><a href="{% url "quiz_update" quiz.id %}">Edit</a> | <a href="{% url "question_create" %}">Add Question</a></td>
 			  </tr>
 			{% endfor %}

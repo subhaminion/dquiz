@@ -4,6 +4,7 @@ from django.db import models
 class Quiz(models.Model):
     quiz_description = models.CharField(max_length=100)
     isPublished = models.BooleanField()
+    canPublish = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.quiz_description}"
